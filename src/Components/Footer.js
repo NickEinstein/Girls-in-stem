@@ -2,49 +2,81 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BsYoutube,BsFacebook,BsInstagram, BsApple, BsFillFileEarmarkCodeFill } from 'react-icons/bs';
 import { AiFillAndroid,AiOutlineCopyright, AiFillUnlock } from 'react-icons/ai';
-import { Button, Input } from 'antd';
-
 
 
 const Footer = () => {
-
-    const {TextArea} = Input
     return (
-        <div className='p-50' style={{backgroundColor:'#370548'}} >
-            <div className='flex-between color-w p-50 '>
-                <section className='w-50 color-w border-left-col flex-center '>
-                    <div>
-                        <h2 style={{fontSize:"22px", marginBottom:'', color:'white'}}>Support Girls in STEM</h2>
-                        <h3 className='color-w'>Become a partner or sponsor an event</h3>
-                        <div className='flex-between w-70 p-50-0 '>
-                            <Button className='buttons-big m-r-10'>Donate</Button>
-                            <Button className='buttons-big'>Sponsor</Button>
-                        </div>
-                    </div>
-                </section>
-
-                <section className='w-50 p-0-20 footer-2sec flex-center'>
-                    <div className='0'>
-                        <h2 style={{fontSize:"22px", marginBottom:'', color:'white'}}>Sign Up For Our  Newsletter</h2>
-                        <h3 className='color-w'>Get access to the latest news, resources, and opportunities </h3>
-                        <div className='p-50-0  flex-center'>
-                            <div class="">
-                                <TextArea rows={7}/>
-                                <Button className='buttons-big m-t-30'>Submit</Button>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
+        <div style={{backgroundColor:'#370548', padding:'70px 60px', color:'white'}} className='footer general-padding flex-between' >
+            <ul>
+                <h2 style={{fontSize:"22px", marginBottom:'100px', color:'white'}}>Categories</h2>
                
-            </div>
 
-           
+                <li> Development & IT</li>
+                <li>Design & Creative</li>
+                <li>Sales & Marketing</li>
+                <li>Writing & Translation</li>
+                <li>Backend Development</li>
+                <li>CMS Development</li>
+                <li>HR & Training</li>
+                <li>Legal</li>
+                <li>Hire freelancers</li>
+                <li>Mobile App Development</li>
+            </ul>
+
+            <ul>
+                <h2 style={{fontSize:"22px", marginBottom:'100px', color:'white'}}>Fore Talent</h2>
+               
+
+                
+                <li>How to Find Work</li>
+                <li>Direct Contracts</li>
+                <li>How to update profile</li>
 
 
-            
+            </ul>
 
-                     
+
+            <ul>
+                <h2 style={{fontSize:"22px", marginBottom:'100px', color:'white'}}>For Clients</h2>
+               
+
+                <li> How To Hire</li>
+                <li>Talent Scout</li>
+                <li>Sales & Marketing</li>
+                <li>Payment Method</li>
+                <li>Direct Contracts</li>
+                <li>Hire Worldwide</li>
+               
+               
+            </ul>
+
+            <ul>
+                <h2 style={{fontSize:"22px", marginBottom:'100px', color:'white'}}>About Us</h2>
+               
+
+                
+
+                <li> Investor Relations</li>
+                <li> Careers</li>
+                <li>Our Impact</li>
+                <li>Press</li>
+                <li>Contact Us</li>
+            </ul>
+                
+
+            <ul>
+                <h2 style={{fontSize:"22px", marginBottom:'100px', color:'white'}}>Support</h2>
+               
+                
+
+
+
+                <li> Help & Support</li>
+                <li>Trust & Safety</li>
+                <li>FAQs</li>
+                <li>Community</li>
+                
+            </ul>
         </div>
     )
 }

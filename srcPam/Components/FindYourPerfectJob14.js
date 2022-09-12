@@ -8,15 +8,7 @@ import LoginHeader from './LoginHeader';
 // import trustedBy4 from './images/trustedBy-4.png'
 import { Button, Input, notification } from 'antd';
 import { useNavigate } from 'react-router-dom';
-import {
-    CreateUser,
-    DashboardMdaRequestCount,
-    RequestLogs,
-    UpdateRequestItem,
-    GetModuleLink,
-    // GetTotalPayPerMDA
-  } from "../utility/fetch";
-import { post } from "../services/fetch";
+
 
 
 
@@ -24,7 +16,6 @@ const FindYourPerfectJob = (prop) => {
 
         const [username, setUsername] = useState('')
         const [name, setName] = useState('')
-        const [come, setcome] = useState('')
         const [password, setPassword] = useState('')
         const [confirmPassword, setConfirmPassword] = useState('')
         const [errorMsg, setErrorMsg] = useState('')
@@ -61,51 +52,14 @@ const FindYourPerfectJob = (prop) => {
     }
 
     const signIn = ()=>{
-        setcome(true)
-        let payload = 
-            {
-                email: 'prop.emails',
-                first_name: name,
-                last_name: 'string',
-                username: username,
-                password: password,
-                countryId: 160
-              }
-        
         //    const current = history.path
     if (toValidate()){
-        create(payload)
-        // history('/sign-up/client-login')
+        history('/sign-up/client-login')
     }
-}
           
-
-    const create = async (payload) => {
-        
-        console.log(payload)
-        try {
-        //   const payload = []
-        const res = await post({
-                  endpoint: "api/freelancer/create",
-                  body: payload,
-                  auth: false,
-        });
-        console.log(res)
-        // history('/sign-up/client-login')
-        
-       
-          if (res.data.status=='success') {
-            // alert('enter')
-         history('/sign-up/client-login')
-          
-         }
-       } catch (ex) {
-          console.log(ex.Response);
-        }
-      };
             
     
-        
+        }
     console.log(prop)
     return (
         <div className=' '>

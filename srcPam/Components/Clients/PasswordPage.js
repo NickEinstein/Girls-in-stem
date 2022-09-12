@@ -8,7 +8,6 @@ import LoginHeader from '../LoginHeader';
 // import trustedBy4 from './images/trustedBy-4.png'
 import { Button, Input, notification } from 'antd';
 import { useNavigate } from 'react-router-dom';
-import { post } from "../../services/fetch";
 
 
 const PasswordPage = (prop) => {
@@ -25,10 +24,6 @@ const openNotificationWithIcon = (type, description, title) => {
     });
   };
 
-  const goBack = ()=>{
-    history(-1)
-  }
-
   const toValidate = ()=>{
     if (!password){
         openNotificationWithIcon('error','Please input password ')
@@ -42,46 +37,10 @@ const openNotificationWithIcon = (type, description, title) => {
     console.log('hi')
 
     const signUpAsClient =()=>{{
-        let payload = 
-        {
-            email: 'nickacad26@gmail.com',
-           
-            password: password,
-            // countryId: 160
-          }
         toValidate() &&
-
-        create(payload)
-    
+        history('/sign-up/client-dashboard');
 
     }}
-
-     
-
-    const create = async (payload) => {
-        
-        console.log(payload)
-        try {
-        //   const payload = []
-        const res = await post({
-                  endpoint: "api/freelancer/login",
-                  body: payload,
-                  auth: false,
-        });
-        console.log(res)
-        // history('/sign-up/client-login')
-        
-       
-          if (res.data.status=='success') {
-            // alert('enter')
-        history('/sign-up/client-dashboard');
-        //  history('/sign-up/client-login')
-          
-         }
-       } catch (ex) {
-          console.log(ex.Response);
-        }
-      };
     return (
         
         <div className=' '>

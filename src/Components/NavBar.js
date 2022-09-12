@@ -1,9 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import logo from '../images/Flag-logo.png'
+import logo from '../images/logo-Softwork.png'
 import { BrowserRouter as Router , Routes, Route, useNavigate } from 'react-router-dom';
 import { Button, Input } from 'antd';
-import ClientNavBar from './Clients/ClientNavBar';
 
 const NavBar = (prop)=>{
   const history = useNavigate();
@@ -15,24 +14,56 @@ const NavBar = (prop)=>{
 
         history('/sign-up');
     }
+
+
+    const fetchRequestLogs = async (querry) => {
+        try {
+        //   const payload = []
+          
+        //   const result = await RequestLogs();
+        //   console.log(result)
+        //   console.log(result.data.result.mdaCount)
+        //   console.log(result.data.result.totalAmount)
+    
+        //   if (result?.data?.statusCode === "00") {
+            // setRequestLogs(result.data.result.mdaDetails);
+            // setMdaCount(result.data.result.mdaCount);
+            // setTotalAmount(result.data.result.totalAmount);
+            // let tot = result?.headers["x-pagination"];
+            // let res = JSON.parse(tot);
+            // setTotalElement(res?.TotalCount);
+            // setCurrent(res?.CurrentPage);
+        //   }
+        } catch (ex) {
+        //   console.log(ex.Response);
+        }
+      };
+    
     return(
         <div className='general-padding' style={{color:prop.backgroundColor}}>
             <nav className='navbar w-100' >
                 
                     <div className='flex-between flex-align w-100 '>
-                    <li>
-                                <img src = {logo} style={{width:"100px"}}/>
-                    </li>
                         <div className='first-part w-50 '>
                         <div className='flex-between flex-align bold'>
-                            
+                            <li>
+                                <img src = {logo} style={{width:"125px"}}/>
+                            </li>
                             <li>Post a Job</li>
                             <li>Find Work</li>
                             <li>Explore</li>
                             <li>About Us</li>
                         </div>
                         </div>
-                        
+                        <ul className='flex-between flex-align bold second-part two-percent-padding' style={{width:'35%'}}>
+                            <li>
+                                <Input placeholder='Search' style={{padding:'9px', borderRadius:'20px'}}/>
+                            </li>
+                            <li>Login</li>
+                            <li>
+                                <Button onClick={signUp} className='bold' style={{padding:'0px', borderRadius:'30px', width:'110px', fontFamily: 'Merriweather serif',fontWeight:'bold' }}>SignUp</Button>
+                            </li>
+                            </ul>
                         
                         
                     </div>
@@ -47,7 +78,6 @@ const NavBar = (prop)=>{
                     <li style={{fontSize:'13px'}}>Graphics & Design</li>
             </ul>
             </nav>
-            <ClientNavBar/>
         </div>
     )
 }
