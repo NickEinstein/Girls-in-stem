@@ -18,7 +18,7 @@ const VectorCards = (prop) => {
     style={{ width: 220, height:150,boxShadow: '3.99099px 3.99099px 1.33033px rgba(0, 0, 0, 0.3)', borderRadius:"13.3033px" }}
     // cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
   >
-     {prop.image}
+                 {prop.image}
                 <p>{prop.text}</p>
   </Card>
             {/* <img src = {trustedBy2}/> */}

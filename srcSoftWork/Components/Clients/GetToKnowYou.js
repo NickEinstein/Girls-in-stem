@@ -15,6 +15,9 @@ import { useNavigate } from 'react-router-dom';
 const GetToKnowYou = (prop) => {
     const history = useNavigate();
 
+    const goBack = ()=>{
+        history(-1)
+            }
     // const {history} = 
     const redirect = ()=>{
         history('/sign-up/personal-info')
@@ -32,7 +35,7 @@ const GetToKnowYou = (prop) => {
       
         <div className='flex w-100 flex-center m-b-60' >
             <div className='w-50  w-100  m-t-60 flex flex-vertical'>
-            <Button block className='m-t-10.buttons' style={{borderRadius:'10px', marginTop:'10px', height:'42px', backgroundColor:'#5B0877', color:"white",}}>Back</Button>
+            <Button block className='m-t-10.buttons' style={{borderRadius:'10px', marginTop:'10px', height:'42px', backgroundColor:'#5B0877', color:"white",}} onClick={goBack}>Back</Button>
             <Button block className='m-t-10.buttons' style={{borderRadius:'10px', marginTop:'10px', height:'42px', backgroundColor:'transparent',}}>Continue</Button>
             <Button onClick={redirect} block className='m-t-10.buttons' style={{borderRadius:'10px', marginTop:'10px', height:'42px', backgroundColor:'transparent',}}>Continue</Button>
             </div>

@@ -12,14 +12,21 @@ import DashboardSection9 from './DashboardSection9';
 import Footer from './Footer';
 import NavBar from './NavBar';
 
-import landing from '../images/Pam_dash.png'
+import landing from '../images/Landing1.png'
 import landing2 from '../images/landing2.png'
 import landing3 from '../images/landing3.png'
 import landing4 from '../images/landing4.png'
 import landing5 from '../images/landing5.png'
-import NavBarr from './NavBarr';
-import AboutSection3 from './AboutSection3';
 // import { useEffect, useState } from 'react';
+
+import {
+    DashboardMainStatistics,
+    DashboardMdaRequestCount,
+    RequestLogs,
+    UpdateRequestItem,
+    GetModuleLink,
+    // GetTotalPayPerMDA
+  } from "../utility/fetch";
 
 const Dashboard = (prop)=>{
     // console.log(prop)
@@ -32,52 +39,72 @@ const Dashboard = (prop)=>{
     const [change, setChange] = useState(false)
     const [placeKeeper, setPlaceKeeper] = useState(0)
 
-    // const checkTi = ()=>{
-    //     // console.log(timer%5)
-    //      timer % 5 === 0 &&
-    //      setPlaceKeeper(placeKeeper+1)
+    const checkTi = ()=>{
+        // console.log(timer%5)
+         timer % 5 === 0 &&
+         setPlaceKeeper(placeKeeper+1)
        
-    // }
+    }
 
-//     useEffect(()=>{
-// checkTi()
+    useEffect(()=>{
+checkTi()
 
-//     },[timer])
+    },[timer])
 
-//     useEffect(()=>{
-//         console.log(placeKeeper)
-// if(placeKeeper>4){
-//     setPlaceKeeper(0)
+    useEffect(()=>{
+        console.log(placeKeeper)
+if(placeKeeper>4){
+    setPlaceKeeper(0)
 
-// }
+}
 // else
 // picture = pictures[placeKeeper]
         
-            // },[placeKeeper])
+            },[placeKeeper])
 
-//     setInterval(()=>{
-// setTimer(Math.floor((new Date/1000)))
-//     }, 1000
+    setInterval(()=>{
+setTimer(Math.floor((new Date/1000)))
+    }, 1000
 
-//     )
+    )
 
+
+    const fetchRequestLogs = async (querry) => {
+        try {
+        //   const payload = []
+          
+        //   const result = await RequestLogs();
+        //   console.log(result)
+        //   console.log(result.data.result.mdaCount)
+        //   console.log(result.data.result.totalAmount)
+    
+        //   if (result?.data?.statusCode === "00") {
+            // setRequestLogs(result.data.result.mdaDetails);
+            // setMdaCount(result.data.result.mdaCount);
+            // setTotalAmount(result.data.result.totalAmount);
+            // let tot = result?.headers["x-pagination"];
+            // let res = JSON.parse(tot);
+            // setTotalElement(res?.TotalCount);
+            // setCurrent(res?.CurrentPage);
+        //   }
+        } catch (ex) {
+        //   console.log(ex.Response);
+        }
+      };
+    
     return(
         <div className='w-100 bg-white' >
            <div style={{backgroundColor:backgroundColors[placeKeeper]}}>
-               {/* <NavBar history ={prop.history} backgroundColor={colors[placeKeeper]}/> */}
-               <NavBarr history ={prop.history} backgroundColor={colors[placeKeeper]}/>
+               <NavBar history ={prop.history} backgroundColor={colors[placeKeeper]}/>
                <DashboardSection1 />
             </div>
                <DashboardSection2/>
-               <div className='' style={{marginTop:'170px'}}>
-                <DashboardSection3/>
-                </div>
+               <DashboardSection3/>
                <DashboardSection4/>
-               
                <DashboardSection5/>
                <DashboardSection6/>
                <DashboardSection7/>
-               {/* <DashboardSection9/> */}
+               <DashboardSection9/>
                <Footer/>
            
         </div>

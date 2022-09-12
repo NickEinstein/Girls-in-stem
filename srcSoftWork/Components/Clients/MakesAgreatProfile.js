@@ -20,6 +20,10 @@ const MakesAgreatProfile = (prop) => {
     const redirect = ()=>{
         history('/sign-up/get-to-know-you')
     }
+
+    const goBack = ()=>{
+history(-1)
+    }
     return (
         <div className=' bg-white'>
             <ClientNavBar/>
@@ -70,7 +74,7 @@ so take your timeand create a perfect profile</h3>
 
                         <div className='flex' style={{justifyContent:'flex-end'}}>
                             <div className='w-50 login-bck m-r-20 m-t-50 m-b-50 flex' style={{justifyContent:'flex-end'}}>
-                                <Button className='buttons m-r-50'>Back</Button>
+                                <Button className='buttons m-r-50' onClick={goBack}>Back</Button>
                                 <Button onClick={redirect} className='buttons'>Continue</Button>
                             </div>
                         </div>                     

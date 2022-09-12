@@ -6,6 +6,9 @@ import ReactDOM from 'react-dom';
 import logo from './logo.svg';
 import './App.css';
 import Dashboard from './Components/Dashboard';
+import JoinUs from './Components/JoinUs';
+import About from './Components/About';
+import Community from './Components/Community';
 import Page6LOGIN from './Components/Page6Login';
 import SignupAsClient from './Components/Clients/signupAsClient';
 
@@ -47,7 +50,7 @@ function App() {
   return (
     <div className="App">
        {/* <Navbar /> */}
-    <Router>
+       <Router>
          <Routes>
          <Route element={<ProtectedRoute/>} >
           
@@ -180,6 +183,9 @@ function App() {
          </Route>
 
            <Route path="/" element={<Dashboard/>} />
+           <Route path="/join-us" element={<JoinUs/>} />
+           <Route path="/about" element={<About/>} />
+           <Route path="/community" element={<Community/>} />
            <Route path="*" element={ <h1>Error 404. Page not found.</h1>} />
            {/* <Route path="about" element={<About />} /> */}
          </Routes>
